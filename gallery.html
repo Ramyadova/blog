@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photo Gallery</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      text-align: center;
+      background-color: #f8f9fa;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);     /* 5 columns */
+      grid-template-rows: repeat(5, 1fr);        /* 5 rows */
+      gap: 15px;
+      padding: 10px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .gallery img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .gallery img.center {
+      grid-column: 3 / 4;       /* Center column */
+      grid-row: 3 / 4;          /* Center row */
+      transform: scale(1.1);    /* Slight zoom */
+      z-index: 2;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Dr. Ambedkar Photo Gallery</h1>
+
+  <div class="gallery">
+    <img src="https://i.ytimg.com/vi/6BoUVLcknZQ/hqdefault.jpg" alt="Photo 1" />
+    <img src="https://tse4.mm.bing.net/th?id=OIP.jrACOyG4VjiCUNuiLUOV8AHaJ7&pid=Api&P=0&h=180" alt="Photo 2" />
+    <img src="https://tse1.mm.bing.net/th?id=OIP.paBNG6Kbx2r9JgqB5A-G6AHaKe&pid=Api&P=0&h=180" alt="Photo 3" />
+    <img src="https://tse2.mm.bing.net/th?id=OIP.oQwe8T16T_FtCklDXPfRpwAAAA&pid=Api&P=0&h=180" alt="Photo 4" />
+    <img src="https://tse2.mm.bing.net/th?id=OIP.ZpmC_D9lFjfBfcEbFYOu0gHaEK&pid=Api&P=0&h=180" alt="Photo 5" />
+    <img src="https://tse2.mm.bing.net/th?id=OIP.Ong9YVom5eqDhP89Y8OxRQHaEn&pid=Api&P=0&h=180" alt="Photo 6" />
+    <img src="https://tse3.mm.bing.net/th?id=OIP.2YTLx37IzG8uC3orrSD7hgHaFA&pid=Api&P=0&h=180" alt="Photo 7" />
+    <img src="https://tse2.mm.bing.net/th?id=OIP.yuAewFmdVVmltc_F2YlmWAHaE8&pid=Api&P=0&h=180" alt="Photo 8" />
+    <img src="https://tse3.mm.bing.net/th?id=OIP.pRIToJ5CJSyApjBfdLY3qwHaFj&pid=Api&P=0&h=180" alt="Photo 9" />
+    <img src="https://tse2.mm.bing.net/th?id=OIP.7OcxdhQis7iB7h_yY6su4wHaHa&pid=Api&P=0&h=180" alt="Photo 10" />
+    <img src="https://st1.latestly.com/wp-content/uploads/2022/12/2-Quotes-by-BR-Ambedkar.jpg" alt="Photo 11" />
+    <img src="https://www.hindustantimes.com/ht-img/img/2023/04/12/1600x900/Collage_Maker-12-Apr-2023-02-22-PM-1808_1681289155712_1681289179039_1681289179039.jpg" alt="Photo 12" />
+    <img src="https://i.pinimg.com/originals/00/fc/2d/00fc2d29f26f864d8ca6913a99c49f53.jpg" alt="Photo 13" />
+    <img src="https://tse3.mm.bing.net/th?id=OIP.ee_WhHw-mFsehtMziajKCAHaFj&pid=Api&P=0&h=180" alt="Photo 14" />
+    <img src="https://tse1.mm.bing.net/th?id=OIP.pjv1E48RP7odx0UF2s5xiQHaD2&pid=Api&P=0&h=180" alt="Photo 15" />
+    <img src="https://tse4.mm.bing.net/th?id=OIP.Qv1rPkxGAmKJtj98X0IpjQHaD8&pid=Api&P=0&h=180" alt="Photo 16" />
+    <img src="https://tse4.mm.bing.net/th?id=OIP.OwetoLuY9hydU2fGLH8oFgHaEK&pid=Api&P=0&h=180" alt="Photo 17" />
+    <img src="https://tse2.mm.bing.net/th?id=OIP.vN8VB1J7ifCBP8HZAVNHbgHaEK&pid=Api&P=0&h=180" alt="Photo 18" />
+    <!-- 🔽 Center Photo with 'center' class -->
+    <img src="https://tse1.mm.bing.net/th?id=OIP.Kce2kjOmOmHRUkUW3kYu1QHaHa&pid=Api&P=0&h=180" alt="Photo 19" class="center" />
+    <img src="https://tse2.mm.bing.net/th?id=OIP.V7tpvvuwX0WGpdrdKltMNAHaEK&pid=Api&P=0&h=180" alt="Photo 20" />
+  </div>
+</body>
+</html>
