@@ -5,46 +5,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login</title>
   <style>
-    body { font-family: Arial; padding: 20px; }
-    form { max-width: 300px; margin: auto; }
-    input { width: 100%; margin: 10px 0; padding: 10px; }
-    a, button { display: block; margin: 10px 0; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://wallpapercave.com/wp/K95gIGw.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      width: 90%;
+      max-width: 400px;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px 12px 40px;
+      border: none;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 15px;
+    }
+
+    .form-group i {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: #ccc;
+    }
+
+    .form-utility {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .form-utility label {
+      display: flex;
+      align-items: center;
+    }
+
+    .form-utility input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background: white;
+      color: #000;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background: #ddd;
+    }
+
+    .register-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .register-link a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .register-link a:hover {
+      text-decoration: underline;
+    }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-  <h2>Login</h2>
-  <form id="loginForm">
-    <input type="text" name="username" placeholder="Username or Email" required />
-    <input type="password" name="password" placeholder="Password" required />
-    <a href="#">Forgot Password?</a>
-    <button type="submit">Login</button>
-  </form>
-
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const form = e.target;
-      const username = form.username.value;
-      const password = form.password.value;
-
-      const storedUser = JSON.parse(localStorage.getItem("user"));
-
-      if (!storedUser) {
-        alert("No registered user found. Please register first.");
-        return;
-      }
-
-      if (
-        (username === storedUser.name || username === storedUser.email) &&
-        password === storedUser.password
-      ) {
-        alert("Login successful!");
-        window.location.href = "blog.html"; // ✅ Updated to point to your actual blog
-      } else {
-        alert("Invalid username or password!");
-      }
-    });
-  </script>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="blog.html" method="post">
+      <div class="form-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" name="email" placeholder="Email" required />
+      </div>
+      <div class="form-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" placeholder="Password" required />
+      </div>
+      <div class="form-utility">
+        <label><input type="checkbox" /> Remember me</label>
+        <a href="#">Forgot Password?</a>
+      </div>
+      <button type="submit" class="login-btn">Login</button>
+      <div class="register-link">
+        Don't have an account? <a href="index.html">Register</a>
+      </div>
+    </form>
+  </div>
 </body>
 </html>
